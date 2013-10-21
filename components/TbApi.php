@@ -87,7 +87,7 @@ class TbApi extends CApplicationComponent
 	/**
 	 * Registers the DatePicker CSS.
 	 */
-	public function registerDatepickerCss()
+	public function registerDatapickerCss()
 	{
 		Yii::app()->getClientScript()->registerCssFile($this->getAssetsUrl().'/css/datepicker.css');
 	}
@@ -100,7 +100,7 @@ class TbApi extends CApplicationComponent
         $this->registerCoreCss();
         $this->registerResponsiveCss();
         $this->registerYiistrapCss();
-		$this->registerDatepickerCss();
+		$this->registerDatapickerCss();
     }
 
     /**
@@ -114,12 +114,13 @@ class TbApi extends CApplicationComponent
             $fileName = YII_DEBUG ? 'bootstrap.js' : 'bootstrap.min.js';
             $url = $this->getAssetsUrl() . '/js/' . $fileName;
         }
-        /** @var CClientScript $cs */
+		/** @var CClientScript $cs */
         $cs = Yii::app()->getClientScript();
         $cs->registerCoreScript('jquery');
         $cs->registerScriptFile($url, $position);
 		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap-datepicker.js', $position);
-    }
+		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap-inputmask.min.js', $position);
+	}
 
     /**
      * Registers the Tooltip and Popover plugins.
