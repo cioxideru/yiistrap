@@ -89,7 +89,7 @@ class TbApi extends CApplicationComponent
 	 */
 	public function registerDatapickerCss()
 	{
-		Yii::app()->getClientScript()->registerCssFile($this->getAssetsUrl().'/css/datepicker.css');
+		Yii::app()->getClientScript()->registerCssFile($this->getAssetsUrl().'/css/bootstrap-datepicker_2.css');
 	}
 
     /**
@@ -118,7 +118,7 @@ class TbApi extends CApplicationComponent
         $cs = Yii::app()->getClientScript();
         $cs->registerCoreScript('jquery');
         $cs->registerScriptFile($url, $position);
-		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap-datepicker.js', $position);
+		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap-datepicker_2.js', $position);
 		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap-inputmask.min.js', $position);
 	}
 

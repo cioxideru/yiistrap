@@ -983,8 +983,8 @@ class TbHtml extends CHtml // required in order to access the protected methods 
         $id = 0;
         $checkAll = true;
 
-		if(is_object($select) && is_subclass_of($select, 'GxActiveRecord') ||
-			is_array($select) && is_subclass_of(current($select), 'GxActiveRecord')
+		if((is_object($select) && is_subclass_of($select, 'GxActiveRecord')) || (
+			is_array($select) && is_object(current($select)) &&  is_subclass_of(current($select), 'GxActiveRecord'))
 		){
 			$select = GxActiveRecord::extractPkValue($select);
 		}
